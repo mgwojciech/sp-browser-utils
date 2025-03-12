@@ -31,7 +31,7 @@ function debugWebPart(webPartId) {
     tabFrame.src = `${tabSrc.origin}/_layouts/15/TeamsLogon.aspx?SPFX=true&dest=/_layouts/15/teamshostedapp.aspx%3Fteams%26personal%26componentId=${webPartId}%26forceLocale=en-us${encodeURIComponent("&debug=true&noredir=true&debugManifestsFile=https://localhost:4321/temp/manifests.js")}`
 }
 function get(api){
-    fetch(api,{
+    return fetch(api,{
         method:"GET",
         headers:{
             accept: "application/json",
@@ -41,7 +41,7 @@ function get(api){
 }
 
 function getVerbose(api){
-    fetch(api,{
+    return fetch(api,{
         method:"GET",
         headers:{
             accept: "application/json;odata=verbose",
